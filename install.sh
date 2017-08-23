@@ -48,21 +48,21 @@ fi
 
 # install OSMC GPIO #######################################
 echo -e "$bar Get files ..."
+wget -qN --show-progress https://codeload.github.com/rern/OSMC_GPIO/zip/master -O master.zip
 
-gitpath=https://raw.githubusercontent.com/rern/OSMC/master/OSMC_GPIO
-wget -qN --show-progress $gitpath/uninstall_gpio.sh
-wget -qN --show-progress $gitpath/_repo/OSMC_GPIO.tar.xz
-chmod 755 uninstall_gpio.sh
+echo -e "$bar Install new files ..."
+mkdir -p /tmp/install
+bsdtar -xf master.zip --strip 1 --exclude '_repo/' -C /tmp/install
+rm master.zip /tmp/install/{.*,*.md,install.sh} &> /dev/null
+[[ -e /home/osmc/gpio.json ]] && rm /tmp/install/home/osmc/gpio.json
 
-echo -e "$bar Install files ..."
-[[ -e /home/osmc/gpio.json ]] && gpio='--exclude=gpio.json'
-bsdtar -xvf OSMC_GPIO.tar.xz -C / $gpio
-rm OSMC_GPIO.tar.xz
+chown -R root:root /tmp/install
+chmod -R 644 /tmp/install
+chmod 755 /tmp/install/home/osmc/*.py /tmp/install/usr/local/bin/uninstall*
 
-chmod 755 /home/osmc/*.py
-chmod 666 /home/osmc/gpio.json
+cp -r /tmp/install/* /
+rm -r /tmp/install
 
-chmod 644 /etc/udev/rules.d/usbsound.rules
 udevadm control --reload
 
 # set initial gpio #######################################
