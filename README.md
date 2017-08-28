@@ -24,6 +24,8 @@ Edit: `/home/osmc/gpio.json`
 <key2>RunScript(/home/osmc/gpiooff.py)</key2>
 ```
 
+![remote](https://github.com/rern/_assets/blob/master/OSMC_GPIO/usb_pc_remote_button_code.jpg)  
+
 - Menu: add the following to `DialogButtonMenu.xml` in skin directory  
 ```xml
 <!-- within <content> ... </content> -->
