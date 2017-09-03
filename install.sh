@@ -58,8 +58,7 @@ rm master.zip /tmp/install/{.*,*.md,install.sh} &> /dev/null
 [[ -e /home/osmc/gpio.json ]] && rm /tmp/install/home/osmc/gpio.json
 
 chown -R root:root /tmp/install
-chmod -R 644 /tmp/install
-chmod 755 /tmp/install/home/osmc/*.py /tmp/install/usr/local/bin/uninstall*
+chmod -R 755 /tmp/install
 
 cp -rp /tmp/install/* /
 rm -r /tmp/install
