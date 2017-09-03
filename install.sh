@@ -51,6 +51,7 @@ echo -e "$bar Get files ..."
 wgetnc https://github.com/rern/OSMC_GPIO/archive/master.zip
 
 echo -e "$bar Install new files ..."
+rm -rf /tmp/install
 mkdir -p /tmp/install
 bsdtar -xf master.zip --strip 1 --exclude '_repo/' -C /tmp/install
 rm master.zip /tmp/install/{.*,*.md,install.sh} &> /dev/null
@@ -60,7 +61,7 @@ chown -R root:root /tmp/install
 chmod -R 644 /tmp/install
 chmod 755 /tmp/install/home/osmc/*.py /tmp/install/usr/local/bin/uninstall*
 
-cp -r /tmp/install/* /
+cp -rp /tmp/install/* /
 rm -r /tmp/install
 
 udevadm control --reload
