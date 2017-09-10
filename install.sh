@@ -106,7 +106,7 @@ fi
 
 timestop
 title -l = "$bar $osmcgpio installed successfully."
-echo "Uninstall: uninstall_gpio.sh"
+echo 'Uninstall: uninstall_gpio.sh'
 echo
-echo 'Setting: /home/osmc/gpio.json'
-title -nt "Power menu > GPIO On / GPIO Off"
+echo 'Setting: edit /home/osmc/gpio.json'
+title -nt 'Power menu > GPIO On / GPIO Off'
