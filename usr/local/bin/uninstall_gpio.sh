@@ -5,7 +5,7 @@ wget -qN --show-progress https://github.com/rern/title_script/raw/master/title.s
 osmcgpio=$( tcolor "OSMC GPIO" )
 
 # check installed #######################################
-if [ ! -e /usr/local/bin/uninstall_gpio.sh ]; then
+if [[ ! -e /usr/local/bin/uninstall_gpio.sh ]]; then
 	echo -e "$info $osmcgpio not found."
 	exit
 fi
