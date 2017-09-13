@@ -11,7 +11,7 @@ timestart
 osmcgpio=$( tcolor "OSMC GPIO" )
 
 # check installed #######################################
-if [ -e /home/osmc/gpioon.py ]; then
+if [ -e /usr/local/bin/uninstall_gpio.sh ]; then
 	echo -e "$info $osmcgpio already installed"
 	exit
 fi
