@@ -74,7 +74,6 @@ systemctl start gpioset
 # set permission #######################################
 #echo 'osmc ALL=NOPASSWD: ALL' > /etc/sudoers.d/osmc # already set
 usermod -a -G root osmc # add user osmc to group root to allow /dev/gpiomem access
-#chmod g+rw /dev/gpiomem # allow group to access set in gpioset.py for every boot
 
 # modify shutdown menu #######################################
 file=/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml
