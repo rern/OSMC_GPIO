@@ -91,8 +91,8 @@ sed -i -e '/<content>/ a\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpiooff.py)</onclick>\
 \t\t\t\t\t\t<onclick>dialog.close(all,true)</onclick>\
 \t\t\t\t\t</item>
-' -e 's|XBMC.Powerdown()|RunScript(/home/osmc/power.py)|
-' -e "s|XBMC.Reset()|RunScript(/home/osmc/power.py $part)|
+' -e 's|XBMC.Powerdown()|RunScript(/home/osmc/gpiopower.py)|
+' -e "s|XBMC.Reset()|RunScript(/home/osmc/gpiopower.py $part)|
 " $file
 fi
 
