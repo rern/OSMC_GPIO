@@ -5,6 +5,9 @@ import json
 import sys
 import os
 
+ON = 0
+OFF = 1
+
 with open('/home/osmc/gpio.json') as jsonfile:
 	gpio = json.load(jsonfile)
 
