@@ -1,5 +1,10 @@
 #!/usr/bin/python
 import gpiooff
+import sys
 import os
 
-os.system('/usr/bin/xbmc-send -a "Reboot"')
+if len( sys.argv ) == 1:
+	os.system( '/usr/bin/xbmc-send -a "Reboot"' )
+	exit()
+	
+os.system( '/usr/bin/reboot ' sys.argv[ 1 ] )
