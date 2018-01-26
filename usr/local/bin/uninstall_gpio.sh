@@ -32,7 +32,7 @@ systemctl daemon-reload
 
 # remove files
 echo -e "$bar Remove files ..."
-rm -v /home/osmc/{gpiooff.py,gpioon.py,gpioset.py,gpiotimer.py,poweroff.py,reboot.py}
+rm -v /home/osmc/{gpiooff.py,gpioon.py,gpioset.py,gpiotimer.py,power.py}
 rm -v /etc/systemd/system/gpioset.service
 
 # modify shutdown menu #######################################
