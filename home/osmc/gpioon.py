@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from gpio import *
 
-if GPIO.input( onx[ 1 ] )  == 0:
+if GPIO.input( onx[ 1 ] )  == ON:
 	os.system( '/usr/bin/xbmc-send -a "Notification(GPIO,Already ON)"' )
 	exit()
 
