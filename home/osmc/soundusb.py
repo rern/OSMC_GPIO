@@ -1,8 +1,8 @@
 #!/usr/bin/python
 import sys
-import xml.dom.minidom as minidom
 import os
 import requests
+import xml.dom.minidom as minidom
 
 if len( sys.argv ) > 1: # usb 'remove'
 	os.system( '/usr/bin/xbmc-send -a "Notification(AUDIO OUTPUT,Switched to HDMI)"' )
