@@ -40,12 +40,6 @@ onx  = [ i for i in onx if i != 0 ]
 
 ondx = ond1 + ond2 + ond3
 
-pullup = GPIO.input( onx[ 1 ] )
-print( json.dumps( { 'pullup': pullup } ) )
-
-if len( sys.argv ) > 1 and sys.argv[ 1 ] == 'status':
-	exit()
-
 off   = gpio[ 'off' ]
 off1  = int( off[ 'off1' ] )
 offd1 = int( off[ 'offd1' ] )
