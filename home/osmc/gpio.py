@@ -9,7 +9,7 @@ import time
 ON = 0
 OFF = 1
 
-with open( '/srv/http/gpio.json' ) as jsonfile:
+with open( '/home/osmc/gpio.json' ) as jsonfile:
 	gpio = json.load( jsonfile )
 
 pin  = gpio[ 'pin' ] # get data as key[ 'value' ]
