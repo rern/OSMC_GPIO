@@ -9,8 +9,6 @@ port = element[ 0 ].firstChild.nodeValue
 	
 payload = '{"jsonrpc":"2.0", "method":"XBMC.GetInfoBooleans", "params":{"booleans":["Player.Playing"]}, "id":1}'
 
-timer = int( sys.argv[ 1 ] )
-
 interval = 60
 i = timer
 while i > 0:
