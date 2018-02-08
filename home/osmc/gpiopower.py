@@ -1,7 +1,5 @@
 #!/usr/bin/python
-import gpiooff
-import sys
-import os
+from gpiooff import *
 
 if len( sys.argv ) == 1:
 	os.system( '/usr/bin/xbmc-send -a "Shutdown"' )
