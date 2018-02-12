@@ -5,8 +5,8 @@ import sys
 import os
 import time
 
-ON = 0
-OFF = 1
+ON = 1
+OFF = 0
 
 with open( '/home/osmc/gpio.json' ) as jsonfile:
 	gpio = json.load( jsonfile )
@@ -24,7 +24,6 @@ GPIO.setup( pinx, GPIO.OUT )
 
 if len( sys.argv ) > 1 and sys.argv[ 1 ] == 'set':
 	os.system( '/bin/chmod g+rw /dev/gpiomem' ) # fix permission every boot
-	GPIO.output( pinx, 1 ) # to be remove for high trigger relay
 	exit()
 
 on   = gpio[ 'on' ]
