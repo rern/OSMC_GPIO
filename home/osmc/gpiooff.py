@@ -2,7 +2,7 @@
 from gpio import *
 
 if GPIO.input( offx[ 1 ] ) == OFF and len( sys.argv ) == 1: # bypass on shutdown/reboot (with any argument)
-	os.system( '/usr/bin/xbmc-send -a "Notification(GPIO,Already OFF)"' )
+	os.system( '/usr/bin/xbmc-send -a "Notification( GPIO, Already OFF )"' )
 else:
 	if off1 != 0:
 		GPIO.output( off1, OFF )
