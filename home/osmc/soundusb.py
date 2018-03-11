@@ -1,6 +1,8 @@
 #!/usr/bin/python
 import sys
 import os
+import urllib
+import urllib2
 import xml.dom.minidom as minidom
 
 if len( sys.argv ) > 1: # usb 'remove'
@@ -15,6 +17,8 @@ stdout = os.popen( '/sbin/udevadm info -n /dev/snd/controlC1 -q path' ).read() #
 path = '/sys'+ stdout.replace( 'controlC1\n', 'id' ) # path of id file
 id = os.popen( 'cat '+ path ).read().replace( '\n', '' )
 
+url = 'http://localhost:'+ port +'/jsonrpc'
+headerdata = { 'Content-type': 'application/json', 'Accept': 'application/json' }
 # "ALSA:@:CARD='+ id +',DEV=0" must be exactly, no spaces, as in /home/osmc/.kodi/userdata/guisettings.xml
 data = { "jsonrpc": "2.0", "method": "Settings.SetSettingValue", "params": { "setting": "audiooutput.audiodevice", "value": "ALSA:@:CARD='+ id +', DEV=0" }, "id": 1 }
 
