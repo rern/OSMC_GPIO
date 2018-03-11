@@ -1,15 +1,11 @@
 #!/usr/bin/python
 from gpio import *
-import urllib
-import urllib2
 import xml.dom.minidom as minidom
 
 xml = minidom.parse( '/home/osmc/.kodi/userdata/guisettings.xml' )
 element = xml.getElementsByTagName( 'webserverport' )
 port = element[ 0 ].firstChild.nodeValue
 
-url = 'http://localhost:'+ port +'/jsonrpc'
-headerdata = { 'Content-type': 'application/json', 'Accept': 'application/json' }
 data = { "jsonrpc":"2.0", "method":"XBMC.GetInfoBooleans", "params":{ "booleans":[ "Player.Playing" ] }, "id":1 }
 
 interval = 60
