@@ -4,6 +4,8 @@ import json
 import sys
 import os
 import time
+import urllib
+import urllib2
 
 ON = 1
 OFF = 0
@@ -53,3 +55,6 @@ offx  = [ i for i in offx if i != 0 ]
 offdx = offd1 + offd2 + offd3
 
 timer = int( gpio[ 'timer' ][ 'timer' ] )
+
+url = 'http://localhost:'+ port +'/jsonrpc'
+headerdata = { 'Content-type': 'application/json', 'Accept': 'application/json' }
