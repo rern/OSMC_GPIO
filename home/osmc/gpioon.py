@@ -2,7 +2,7 @@
 from gpio import *
 
 if GPIO.input( onx[ 1 ] )  == ON:
-	os.system( '/usr/bin/xbmc-send -a "Notification(GPIO,Already ON)"' )
+	os.system( '/usr/bin/xbmc-send -a "Notification( GPIO, Already ON )"' )
 	exit()
 
 if on1 != 0:
