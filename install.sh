@@ -80,16 +80,16 @@ file=/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml
 part=$( mount | grep 'on / ' | cut -d' ' -f1 | cut -d'p' -f2 )
 if ! grep -q 'gpioon.py' $file; then
 sed -i -e '/<content>/ a\
-\t\t\t\t\t<item>\
-\t\t\t\t\t\t<label>GPIO On</label>\
-\t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpioon.py)</onclick>\
-\t\t\t\t\t\t<onclick>dialog.close(all,true)</onclick>\
-\t\t\t\t\t</item>\
-\t\t\t\t\t<item>\
-\t\t\t\t\t\t<label>GPIO Off</label>\
-\t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpiooff.py)</onclick>\
-\t\t\t\t\t\t<onclick>dialog.close(all,true)</onclick>\
-\t\t\t\t\t</item>
+					<item>\
+						<label>GPIO On</label>\
+						<onclick>RunScript(/home/osmc/gpioon.py)</onclick>\
+						<onclick>dialog.close(all,true)</onclick>\
+					</item>\
+					<item>\
+						<label>GPIO Off</label>\
+						<onclick>RunScript(/home/osmc/gpiooff.py)</onclick>\
+						<onclick>dialog.close(all,true)</onclick>\
+					</item>
 ' -e 's|XBMC.Powerdown()|RunScript(/home/osmc/gpiopower.py)|
 ' -e "s|XBMC.Reset()|RunScript(/home/osmc/gpiopower.py $part)|
 " $file
